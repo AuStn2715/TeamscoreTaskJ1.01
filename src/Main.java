@@ -11,5 +11,9 @@ public class Main {
         System.out.println("Третья задача");
         TaskMicro3.main(args);
         System.out.println();
+
+        System.out.println("Четвёртая задача");
+        TaskMicro4.main(args);
+        System.out.println();
     }
 }

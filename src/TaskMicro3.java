@@ -34,7 +34,7 @@ public class TaskMicro3 {
                 break;
             }
         }
-        in.close();
+        //in.close();
         double average = sum / numberCount;
 
         System.out.println("Количество чисел: " + numberCount);
