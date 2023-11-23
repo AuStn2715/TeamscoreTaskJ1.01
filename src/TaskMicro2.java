@@ -5,7 +5,7 @@ public class TaskMicro2 {
         System.out.print("Введите значение: ");
         Scanner in = new Scanner(System.in);
         var input = in.next();
-        in.close();
+        //in.close();
 
         boolean inputDataTypeIsNotDefined = true;
         String inputDataType = "Текст"; // по условию задачи любое не числовое или логическое значение можно считать текстом, поэтому это значение по умолчанию
@@ -29,6 +29,6 @@ public class TaskMicro2 {
             }
         }
 
-        System.out.print(inputDataType);
+        System.out.println(inputDataType);
     }
 }
