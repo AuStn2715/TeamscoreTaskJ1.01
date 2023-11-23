@@ -10,7 +10,7 @@ public class TaskMicro4 {
             n = (int)Double.parseDouble(input); // проверка ввода на всякий случай
         }
         catch (NumberFormatException ignored) {}
-        in.close();
+        //in.close();
 
         int number;
         int oldNumber;
