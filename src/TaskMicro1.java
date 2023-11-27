@@ -1,7 +1,8 @@
 public class TaskMicro1 {
     public static void main(String[] args) {
 
-        double[] variables = new double[8];
+        int VAR_COUNT = 8;
+        double[] variables = new double[VAR_COUNT];
         variables[0] = 30.0;
         variables[1] = 10000.1;
         variables[2] = 12.5;
@@ -13,40 +14,24 @@ public class TaskMicro1 {
 
         // задача - вывести данные в виде таблицы, но не указано какой конкретно
         // поэтому просто структурируем данные в консоли, позже можно будет легко переписать
-        System.out.print("число: ");
-        for (int i = 0; i<8; i++) {
-            System.out.print(variables[i]);
-            System.out.print(" ");
+        System.out.println("число   round   floor   ceil    rint    ");
+        for (int i = 0; i<VAR_COUNT; i++) {
+            PrintFormatedForTable(variables[i]);
+            PrintFormatedForTable(Math.round(variables[i]));
+            PrintFormatedForTable(Math.floor(variables[i]));
+            PrintFormatedForTable(Math.ceil(variables[i]));
+            PrintFormatedForTable(Math.rint(variables[i]));
+            System.out.println();
         }
-        System.out.println();
 
-        System.out.print("round: ");
-        for (int i = 0; i<8; i++) {
-            System.out.print(Math.round(variables[i]));
-            System.out.print("   ");
-        }
-        System.out.println();
+    }
 
-        System.out.print("floor: ");
-        for (int i = 0; i<8; i++) {
-            System.out.print(Math.floor(variables[i]));
-            System.out.print(" ");
-        }
-        System.out.println();
+    private static void PrintFormatedForTable(double number) { // не знаком с встроенными функциями выравнивания, поэтому быстро сделал свою
 
-        System.out.print("ceil:  ");
-        for (int i = 0; i<8; i++) {
-            System.out.print(Math.ceil(variables[i]));
-            System.out.print(" ");
-        }
-        System.out.println();
-
-        System.out.print("rint:  ");
-        for (int i = 0; i<8; i++) {
-            System.out.print(Math.rint(variables[i]));
-            System.out.print(" ");
-        }
-        System.out.println();
+        int COLOMN_LENGTH = 8;
+        String result = "" + number;
+        int gapLegth = COLOMN_LENGTH - result.length();
+        System.out.print(result + " ".repeat(gapLegth));
 
     }
 }
