@@ -10,30 +10,32 @@ public class TaskMicro4 {
             n = (int)Double.parseDouble(input); // проверка ввода на всякий случай
         }
         catch (NumberFormatException ignored) {}
-        //in.close();
+        in.close();
 
-        int number;
-        int oldNumber;
-        int maxCombo = 0;
+        int prevNumber;
         var rnd = new Random();
+        int maxCombo = 0; // пока мы не уверены что хотя бы 1 число есть - комбо 0
 
-        number = rnd.nextInt(2000) - 1000; // создадим первое заранее
-        int curCombo = 1;
+        if (n > 0) {
+            int number = rnd.nextInt(2000) - 1000; // создадим первое заранее
+            int curCombo = 1;
+            maxCombo = 1; // мы ввели первое число, так что комбо автоматически стало равным 1
 
-        for (int i = 1; i < n; i++) {
-            oldNumber = number;
-            number = rnd.nextInt(2000) - 1000;
+            for (int i = 1; i < n; i++) {
+                prevNumber = number;
+                number = rnd.nextInt(2000) - 1000;
 
-            boolean currentNumberCombinesWithOld = (number * oldNumber > 0) || (number == 0 && oldNumber == 0);
+                boolean currentNumberCombinesWithOld = (number * prevNumber > 0) || (number == 0 && prevNumber == 0);
 
-            if (currentNumberCombinesWithOld) {
-                curCombo++;
-                if (curCombo > maxCombo) {
-                    maxCombo = curCombo;
+                if (currentNumberCombinesWithOld) {
+                    curCombo++;
+                    if (curCombo > maxCombo) {
+                        maxCombo = curCombo;
+                    }
                 }
-            }
-            else {
-                curCombo = 1;
+                else {
+                    curCombo = 1;
+                }
             }
         }
 
