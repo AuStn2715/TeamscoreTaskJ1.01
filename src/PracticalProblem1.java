@@ -16,7 +16,7 @@ public class PracticalProblem1 {
     private static double CustomInput() {
         var in = new Scanner(System.in);
         var input = in.nextLine();
-        in.close();
+        //in.close();
         double value = -1;
 
         try {

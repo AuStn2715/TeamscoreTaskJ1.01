@@ -19,5 +19,9 @@ public class Main {
         System.out.println("Первая практическая задача");
         PracticalProblem1.main(args);
         System.out.println();
+
+        System.out.println("Вторая практическая задача");
+        PracticalProblem2.main(args);
+        System.out.println();
     }
 }
